@@ -1,5 +1,6 @@
 """
 Rideshare data analysis based on interactive inputs.
+Using version control (git) and github as remote repository
 
 Written By - Muhammad Hasan
 Date - 04.03.20
