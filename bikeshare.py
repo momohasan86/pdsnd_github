@@ -15,7 +15,6 @@ import numpy as np
 # Variable outlining csv file names
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
-             'new york': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
 # Variables to check against if user input is acceptable
@@ -97,10 +96,6 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # Display the most common month
-    cmn_month = int(df['month'].mode()[0]) - 1
-    print('The most common month is: {} \n'.format(months[cmn_month].title()))
-
     # Display the most common day of week
     cmn_day = int(df['day_of_week'].mode()[0])
     print('The most common day is: {} \n'.format(days[cmn_day].title()))
@@ -147,26 +142,22 @@ def trip_duration_stats(df):
 
     # Break total travel time into days, hours, mins and secs
     day = int(tvl_time_total//86400)
-    hr = int(tvl_time_total % 86400 // 3600)
-    min = int(tvl_time_total//60 % 60)
-    sec = round(tvl_time_total % 60, 2)
+
 
     # Display total travel time
     print('Total travel time is {} days, {} hrs, {} mins and {} '
-          'secs \n'.format(day, hr, min, sec))
+          'secs \n'.format(day))
 
     # Calculate mean travel time
     tvl_time_mean = df['Trip Duration'].mean()
 
     # Break mean travel time into days, hours, mins and secs
     day = int(tvl_time_mean//86400)
-    hr = int(tvl_time_mean % 86400 // 3600)
-    min = int(tvl_time_mean//60 % 60)
-    sec = round(tvl_time_mean % 60, 2)
+
 
     # Display mean travel time
     print('Mean travel time is {} days, {} hrs, {} mins and {} '
-          'secs \n'.format(day, hr, min, sec))
+          'secs \n'.format(day))
 
     print('This took %s seconds.' % (time.time() - start_time))
     print('-'*40)
