@@ -146,26 +146,22 @@ def trip_duration_stats(df):
 
     # Break total travel time into days, hours, mins and secs
     day = int(tvl_time_total//86400)
-    hr = int(tvl_time_total % 86400 // 3600)
-    min = int(tvl_time_total//60 % 60)
-    sec = round(tvl_time_total % 60, 2)
+
 
     # Display total travel time
     print('Total travel time is {} days, {} hrs, {} mins and {} '
-          'secs \n'.format(day, hr, min, sec))
+          'secs \n'.format(day))
 
     # Calculate mean travel time
     tvl_time_mean = df['Trip Duration'].mean()
 
     # Break mean travel time into days, hours, mins and secs
     day = int(tvl_time_mean//86400)
-    hr = int(tvl_time_mean % 86400 // 3600)
-    min = int(tvl_time_mean//60 % 60)
-    sec = round(tvl_time_mean % 60, 2)
+
 
     # Display mean travel time
     print('Mean travel time is {} days, {} hrs, {} mins and {} '
-          'secs \n'.format(day, hr, min, sec))
+          'secs \n'.format(day))
 
     print('This took %s seconds.' % (time.time() - start_time))
     print('-'*40)
