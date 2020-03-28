@@ -14,7 +14,6 @@ import numpy as np
 # Variable outlining csv file names
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
-             'new york': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
 # Variables to check against if user input is acceptable
